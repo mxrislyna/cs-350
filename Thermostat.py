@@ -455,21 +455,21 @@ tsm.run()
 ## Configure our green button to use GPIO 24 and to execute
 ## the method to cycle the thermostat when pressed.
 ##
-greenButton = Button(24)
-greenButton.when_pressed = tsm.processTempStateButton
+yellowButton = Button(24, bounce_time=0.2)
+yellowButton.when_pressed = tsm.processTempStateButton
 
 ##
 ## Configure our Red button to use GPIO 25 and to execute
 ## the function to increase the setpoint by a degree.
 ##
-redButton = Button(25)
-redButton.when_pressed = tsm.processTempIncButton
+greenButton = Button(25, bounce_time=0.2)
+greenButton.when_pressed = tsm.processTempIncButton
 
 ##
 ## Configure our Blue button to use GPIO 12 and to execute
 ## the function to decrease the setpoint by a degree.
 ##
-blueButton = Button(12)
+blueButton = Button(12, bounce_time=0.2)
 blueButton.when_pressed = tsm.processTempDecButton
 
 ##
